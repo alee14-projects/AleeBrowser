@@ -1,13 +1,10 @@
 #include "mainbrowser.h"
 #include "ui_mainbrowser.h"
 #include "about.h"
-#include <QtWebKitWidgets/QWebView>
-#include <QUrl>
-#include <QDebug>
 
 void mainbrowser::bUrl() {
-    url = ui->lineEdit->text();
-    ui->webView->load(QUrl(url));
+    url = ui->urlBar->text();
+    ui->webView->load(QUrl("http://" + url));
 }
 
 mainbrowser::mainbrowser(QWidget *parent)
@@ -15,12 +12,14 @@ mainbrowser::mainbrowser(QWidget *parent)
     , ui(new Ui::mainbrowser)
 {
     ui->setupUi(this);
-    ui->webView->load(QUrl("https://about:blank"));
+    QWidget::setWindowTitle("Alee Browser");
+    ui->urlBar->setText("about:blank");
 }
 
 mainbrowser::~mainbrowser()
 {
     qDebug() << "Closing Alee Browser...";
+    ui->webView->deleteLater();
     delete ui;
 }
 
@@ -30,7 +29,7 @@ void mainbrowser::on_actionQuit_triggered()
     close();
 }
 
-void mainbrowser::on_lineEdit_returnPressed()
+void mainbrowser::on_urlBar_returnPressed()
 {
     bUrl();
 }
@@ -54,4 +53,18 @@ void mainbrowser::on_forwardButton_clicked()
 void mainbrowser::on_refreshButton_clicked()
 {
     ui->webView->reload();
+}
+
+void mainbrowser::on_webView_loadStarted()
+{
+
+}
+
+void mainbrowser::on_webView_titleChanged(const QString &title)
+{
+    if (title == NULL) {
+    QWidget::setWindowTitle("Alee Browser");
+    } else {
+    QWidget::setWindowTitle(title + " - Alee Browser");
+    }
 }

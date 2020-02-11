@@ -18,21 +18,28 @@
     <item row="0" column="1">
      <widget class="QPushButton" name="forwardButton">
       <property name="text">
-       <string>-&gt;</string>
+       <string>→</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="2">
+     <widget class="QPushButton" name="refreshButton">
+      <property name="text">
+       <string>Refresh</string>
       </property>
      </widget>
     </item>
     <item row="0" column="0">
      <widget class="QPushButton" name="backButton">
       <property name="text">
-       <string>&lt;-</string>
+       <string>←</string>
       </property>
      </widget>
     </item>
     <item row="0" column="3">
-     <widget class="QLineEdit" name="lineEdit">
+     <widget class="QLineEdit" name="urlBar">
       <property name="text">
-       <string>about:blank</string>
+       <string/>
       </property>
      </widget>
     </item>
@@ -42,13 +49,6 @@
        <url>
         <string>about:blank</string>
        </url>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="2">
-     <widget class="QPushButton" name="refreshButton">
-      <property name="text">
-       <string>Refresh</string>
       </property>
      </widget>
     </item>

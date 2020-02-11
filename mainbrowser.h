@@ -2,6 +2,10 @@
 #define MAINBROWSER_H
 
 #include <QMainWindow>
+#include <QtWebKit>
+#include <QtWebKitWidgets/QWebView>
+#include <QUrl>
+#include <QDebug>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class mainbrowser; }
@@ -18,7 +22,7 @@ public:
 private slots:
     void on_actionQuit_triggered();
 
-    void on_lineEdit_returnPressed();
+    void on_urlBar_returnPressed();
 
     void on_actionAbout_triggered();
 
@@ -29,6 +33,10 @@ private slots:
     void on_forwardButton_clicked();
 
     void on_refreshButton_clicked();
+
+    void on_webView_loadStarted();
+
+    void on_webView_titleChanged(const QString &title);
 
 private:
     Ui::mainbrowser *ui;
