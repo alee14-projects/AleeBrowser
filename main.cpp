@@ -5,7 +5,7 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    mainbrowser w;
-    w.show();
+    mainbrowser browser;
+    browser.show();
     return a.exec();
 }

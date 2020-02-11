@@ -31,13 +31,6 @@
       </property>
      </widget>
     </item>
-    <item row="0" column="0" colspan="2">
-     <widget class="QLineEdit" name="lineEdit">
-      <property name="text">
-       <string>https://www.google.com</string>
-      </property>
-     </widget>
-    </item>
     <item row="1" column="1">
      <spacer name="horizontalSpacer">
       <property name="orientation">
@@ -50,6 +43,13 @@
        </size>
       </property>
      </spacer>
+    </item>
+    <item row="0" column="0" colspan="2">
+     <widget class="QLineEdit" name="lineEdit">
+      <property name="text">
+       <string>about:blank</string>
+      </property>
+     </widget>
     </item>
    </layout>
   </widget>
