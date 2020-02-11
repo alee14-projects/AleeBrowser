@@ -18,15 +18,17 @@ public:
 private slots:
     void on_actionQuit_triggered();
 
-    void on_searchButton_clicked();
-
     void on_lineEdit_returnPressed();
 
     void on_actionAbout_triggered();
 
     void bUrl();
 
-    void on_webView_urlChanged(const QUrl &arg1);
+    void on_backButton_clicked();
+
+    void on_forwardButton_clicked();
+
+    void on_refreshButton_clicked();
 
 private:
     Ui::mainbrowser *ui;

@@ -14,13 +14,13 @@ mainbrowser::mainbrowser(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::mainbrowser)
 {
-    //QString url = ui->lineEdit->text();
     ui->setupUi(this);
     ui->webView->load(QUrl("https://about:blank"));
 }
 
 mainbrowser::~mainbrowser()
 {
+    qDebug() << "Closing Alee Browser...";
     delete ui;
 }
 
@@ -28,11 +28,6 @@ mainbrowser::~mainbrowser()
 void mainbrowser::on_actionQuit_triggered()
 {
     close();
-}
-
-void mainbrowser::on_searchButton_clicked()
-{
-    bUrl();
 }
 
 void mainbrowser::on_lineEdit_returnPressed()
@@ -46,8 +41,17 @@ void mainbrowser::on_actionAbout_triggered()
     about.exec();
 }
 
-void mainbrowser::on_webView_urlChanged(const QUrl &arg1)
+void mainbrowser::on_backButton_clicked()
 {
-    qDebug() << "Loading" << url;
+    ui->webView->back();
+}
 
+void mainbrowser::on_forwardButton_clicked()
+{
+    ui->webView->forward();
+}
+
+void mainbrowser::on_refreshButton_clicked()
+{
+    ui->webView->reload();
 }
